@@ -50,13 +50,16 @@ int main()
             case 2:
                 while (partida(2));
                 break;
+            case 3:
+                tirarDados(true);
+                break;
             case 0:
                 return 0;
                 break;
 
             default:
                 cout << "OPCION INVALIDA, VUELVA A INGRESAR OTRA. " << endl;
-                system("pause"); /// pausa de sistema añadida, ya que sin ella, no se llegaba a leer lo que dice
+                system("pause"); /// pausa de sistema aÃ±adida, ya que sin ella, no se llegaba a leer lo que dice
                 break;
 
 
