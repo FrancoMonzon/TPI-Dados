@@ -56,19 +56,27 @@ string registrarJugador(int pos_vec, int n_jug)
 {
     string nombre;
     string apellido;
-    if (pos_vec == 0) /// al modificiar, el numero, el programa pide 2 veces el apellida y nunca el nombre
+    if (pos_vec == 0) /// al modificar, el numero, el programa pide 2 veces el apellido y nunca el nombre
     {
+        rlutil::locate(38, 7);
         cout << "+------------------------------+" << endl;
+        rlutil::locate(38, 8);
         cout << "| INGRESE NOMBRE DEL JUGADOR " << n_jug << " |" << endl;
+        rlutil::locate(38, 9);
         cout << "+------------------------------+" << endl;
+        rlutil::locate(38, 10);
         cin >> nombre;
         return nombre;
     }
     else
     {
+        rlutil::locate(38, 7);
         cout << "+--------------------------------+" << endl;
+        rlutil::locate(38, 8);
         cout << "| INGRESE APELLIDO DEL JUGADOR "  << n_jug << " |" << endl;
+        rlutil::locate(38, 9);
         cout << "+--------------------------------+" << endl;
+        rlutil::locate(38, 10);
         cin >> apellido;
         system("cls"); /// al quitar este cls, luego de ingresar el nombre y apellido, cuando se pidan la cantidad de rondas, estos seguiran apareciendo
         return apellido;
@@ -129,8 +137,11 @@ int tirarDados(bool prueba)
     {
         for(i=0; i<6; i++)
         {
+            rlutil::locate(30, 5);
             cout << "Ingrese un numero: ";
+            rlutil::locate(30, 6);
             cin >> dado[i];
+            system("cls");
         }
     }
     else
@@ -145,10 +156,15 @@ int tirarDados(bool prueba)
         }
                                                             /// al quitar cualquier salto de linea, se desordenaria todo y quedaria horrible
     }
+    rlutil::locate(30, 10);
     cout << "+-----+ +-----+ +-----+ +-----+ +-----+ +-----+" << endl;
+    rlutil::locate(30, 11);
     cout << "|" << mostrarDado(dado[0], 0) << "| |" << mostrarDado(dado[1], 0) << "| |" << mostrarDado(dado[2], 0) << "| |" << mostrarDado(dado[3], 0) << "| |" << mostrarDado(dado[4], 0) << "| |" << mostrarDado(dado[5], 0) << "|" << endl;
+    rlutil::locate(30, 12);
     cout << "|" << mostrarDado(dado[0], 1) << "| |" << mostrarDado(dado[1], 1) << "| |" << mostrarDado(dado[2], 1) << "| |" << mostrarDado(dado[3], 1) << "| |" << mostrarDado(dado[4], 1) << "| |" << mostrarDado(dado[5], 1) << "|" << endl;
+    rlutil::locate(30, 13);
     cout << "|" << mostrarDado(dado[0], 2) << "| |" << mostrarDado(dado[1], 2) << "| |" << mostrarDado(dado[2], 2) << "| |" << mostrarDado(dado[3], 2) << "| |" << mostrarDado(dado[4], 2) << "| |" << mostrarDado(dado[5], 2) << "|" << endl;
+    rlutil::locate(30, 14);
     cout << "+-----+ +-----+ +-----+ +-----+ +-----+ +-----+" << endl;
 
 
@@ -157,12 +173,16 @@ int tirarDados(bool prueba)
     {
     case 1:
         puntaje = 100;
+        rlutil::locate(30, 15);
         cout << "Escalera " << endl; // 1 para escalera
+        rlutil::locate(30, 16);
         cout << "(" << puntaje << ")"<< endl;
         break;
     case 2:
         puntaje = dado[0]*10;
+        rlutil::locate(30, 15);
         cout << "Sexteto " << endl; // 2 para iguales
+        rlutil::locate(30, 16);
         cout << "(" << puntaje << ")"<< endl;
         break;
     case 3:
@@ -171,18 +191,23 @@ int tirarDados(bool prueba)
             puntaje += dado[i];
 
         }
-        cout<<"Suma de dados "<<endl; /// añadido para mejorar la estetica
+        rlutil::locate(30, 15);
+        cout<<"Suma de dados "<<endl; /// aÃ±adido para mejorar la estetica
+        rlutil::locate(30, 16);
         cout << "(" << puntaje << ")"<< endl;
         break;
     case 0:
         puntaje = 0;
+        rlutil::locate(30, 15);
         cout << "Ups, Sexteto de 6, se reiniciara tu puntaje! " << endl; // 0 para sexteo
+        rlutil::locate(30, 16);
         cout << "(" << puntaje << ")"<< endl;
         break;
     }
 
     if (prueba == true)
     {
+        rlutil::locate(30, 7);
         system("pause");
     }
     return puntaje;
@@ -219,13 +244,19 @@ bool partida(int c_jug)
     int max_puntaje[2] = {0,0}; // Puntaje maximo del jugador 1 y 2, en case de estar en un jugador, queda la segunda posicion en 0
     int puntuacion_total[2] = {0,0}; // Puntutacion total entre ambos jugadores
 
+    rlutil::locate(32, 7);
     cout << "-----------------------------------------------" << endl;
+    rlutil::locate(32, 8);
     cout << "INGRESE CANTIDAD DE RONDAS (min " << min_rondas << "): " << endl;
+    rlutil::locate(32, 9);
     cout << "-----------------------------------------------" << endl;
+    rlutil::locate(32, 10);
     cin >> c_rondas_totales;
     if (c_rondas_totales < min_rondas)
     {
+        rlutil::locate(32, 12);
         cout << "Vuelva a ingresar." << endl;
+        rlutil::locate(32, 13);
         cin >> c_rondas_totales;
     }
 
@@ -235,10 +266,16 @@ bool partida(int c_jug)
         for (lanz_jug[n_jug] = 1; lanz_jug[n_jug] <=3 ; lanz_jug[n_jug]++)
         {
             system("cls");
+
+            rlutil::locate(30, 5);
             cout << "TURNO DE: " << nom_jug[n_jug] << " | RONDA N: " << ronda << "/" << c_rondas_totales << endl;
+            rlutil::locate(30, 6);
             cout << "-----------------------------------------------" << endl;
+            rlutil::locate(30, 7);
             cout << "MAXIMO PUNTAJE DE LA RONDA " << max_puntaje[n_jug] << endl;
+            rlutil::locate(30, 8);
             cout << "LANZAMIENTO N: " << lanz_jug[n_jug] << "/3" << endl;
+            rlutil::locate(30, 9);
             cout << "-----------------------------------------------" << endl;
 
             puntaje = tirarDados(false); // Llama a la funcion de tirar dados
@@ -275,9 +312,13 @@ bool partida(int c_jug)
                 }
             }
 
+            rlutil::locate(30, 17);
             cout << "-----------------------------------------------" << endl;
+            rlutil::locate(30, 18);
             cout << "PUNTAJE TOTAL: "<< puntuacion_total[n_jug] << " PUNTOS" << endl;
+            rlutil::locate(30, 19);
             cout << "-----------------------------------------------" << endl;
+            rlutil::locate(30, 20);
             system("pause"); /// al quitar este pause, no se verian las tiradas y ademas se tirarian solas rapidamente
             system("cls"); /// al quitar este cls, se jugarian las rondas de seguidas, es decir no se mostraria el puntaje al finalizar cada ronda, ( solo en el modo 1 jugador )
         }
@@ -308,10 +349,15 @@ bool partida(int c_jug)
             if (ronda <= c_rondas_totales) // Verifica la cantidad de rondas, por que a veces se muestra al terminar todas ellas
             {
                 system("cls"); /// al quitar este cls, se jugarian las rondas de seguidas, es decir no se mostraria el puntaje al finalizar cada ronda, ( solo en el modo 1 jugador )
+                rlutil::locate(30, 5);
                 cout << "-----------------------------------------------" << endl;
+                rlutil::locate(30, 6);
                 cout << "SIGUIENTE TURNO: " << nom_jug[n_jug] << endl;
+                rlutil::locate(30, 7);
                 cout << "PUNTUACION TOTAL: " << puntuacion_total[n_jug] << endl;
+                rlutil::locate(30, 8);
                 cout << "-----------------------------------------------" << endl;
+                rlutil::locate(30, 9);
                 system("pause"); /// al quitar este pause en cualquier modo, se jugarian todas las rondas seguidas, sin llegar a mostrar ninguna pausa
 
             }
@@ -342,21 +388,31 @@ bool partida(int c_jug)
     }
 
     system("cls"); /// al quitar este cls, se jugarian todas las rondas de seguidas, sin pausas de por medio ( solo en modo de 1 jugador )
+    rlutil::locate(30, 5);
     cout << "RONDAS TOTALES: " << ronda-1 << endl;
+    rlutil::locate(30, 6);
     cout << "-----------------------------------------------" << endl;
     if (puntuacion_total[0] >= 100 || puntuacion_total[1] >= 100)
     {
+        rlutil::locate(30, 7);
         cout << "GANADOR: " << nom_jug[ganador] << " " << nom_jug[ganador+2] << " | PUNTUACION: " << puntuacion_total[ganador] << "/100" << endl;
+        rlutil::locate(30, 8);
         cout << "LANZAMIENTOS: " << lanz_jug_totales[ganador] << endl;
+        rlutil::locate(30, 9);
         cout << "-----------------------------------------------" << endl;
 
     }
     else
     {
+        rlutil::locate(30, 7);
         cout << "PERDEDOR: " << nom_jug[0] << " " << nom_jug[2] << " | PUNTUACION: " << puntuacion_total[0] << "/100" << endl;
+        rlutil::locate(30, 8);
         cout << "LANZAMIENTOS: " << lanz_jug_totales[0] << endl;
+        rlutil::locate(30, 9);
         cout << "-----------------------------------------------" << endl;
     }
+
+    rlutil::locate(30, 10);
     system("pause"); /// al quitar ese pause no se jugarian todas las rondas de seguidas, sin pausas de por medio, en un jugador, y, en 2 jugadores, al finalizar la partida no se mostraria el puntaje del ganador de dicha partida
     en_partida = false;
     return en_partida;
