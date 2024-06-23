@@ -1,4 +1,4 @@
-#include <iostream>
+##include <iostream>
 #include <cstdlib>
 #include <cstdio>
 #include <ctime>
@@ -11,6 +11,10 @@ using namespace std;
 int main()
 {
     int opc;
+
+    string i;
+
+    i = char(205);
 
     system("color 5f");
 
@@ -31,7 +35,7 @@ int main()
         rlutil::locate(30, 11);
         cout << "MENU PRINCIPAL"<<endl;
         rlutil::locate(30, 12);
-        cout << "------------------------------------------------- " << endl;
+        cout <<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<endl;
         rlutil::locate(30, 13);
         cout << "1. UN JUGADOR" << endl;
         rlutil::locate(30, 14);
@@ -41,7 +45,7 @@ int main()
         rlutil::locate(30, 16);
         cout << "0. SALIR DEL JUEGO " << endl;
         rlutil::locate(30, 17);
-        cout << "------------------------------------------------- " << endl << endl;
+        cout <<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<endl;
         rlutil::locate(30, 18);
         cout << "SELECCIONE UNA OPCION: ";
 
@@ -73,6 +77,10 @@ int main()
             system("pause"); /// pausa de sistema añadida, ya que sin ella, no se llegaba a leer lo que dice
             break;
         }
+    }
+    return 0;
+}
+
     }
     return 0;
 }
