@@ -60,7 +60,7 @@ string registrarJugador(int pos_vec, int n_jug)
     string i;
 
     i = char (205);
-    if (pos_vec == 0) /// al modificar, el numero, el programa pide 2 veces el apellido y nunca el nombre
+    if (pos_vec == 0) /// al modificar el numero, el programa pide 2 veces el apellido y nunca el nombre
     {
         rlutil::locate(38, 7);
         cout <<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i <<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i<<i << endl;
