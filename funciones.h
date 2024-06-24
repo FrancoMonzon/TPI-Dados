@@ -87,7 +87,7 @@ string registrarJugador(int pos_vec, int n_jug)
     }
 }
 
-string mostrarDado(int cara, int linea)
+string mostrarDado(int cara, int linea )
 {
     string v[3];
     switch (cara)
