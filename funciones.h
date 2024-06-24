@@ -423,7 +423,7 @@ bool partida(int c_jug)
 
 
     rlutil::locate(30, 10);
-    system("pause"); /// al quitar ese pause no se jugarian todas las rondas de seguidas, sin pausas de por medio, en un jugador, y, en 2 jugadores, al finalizar la partida no se mostraria el puntaje del ganador de dicha partida
+    system("pause"); /// al quitar ese pause se jugarian todas las rondas de seguidas, sin pausas de por medio, en un jugador, y, en 2 jugadores, al finalizar la partida no se mostraria el puntaje del ganador de dicha partida
     en_partida = false;
     return en_partida;
 }
